@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 py-4">
+            <h2 clas="display-5">Lista de Estudiantes</h2>
+        </div>
+
+        <div class="col-3 mt-2" *ngFor="let u of usuarios">
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.seekpng.com/png/full/356-3562377_personal-user.png" width="250" height="300" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ u.nombre }}</h5>
+                    <p class="card-text">Direccion: {{ u.direccion }}</p>
+                    <a [routerLink]="['/eliminar']" class="btn btn-danger" (click)="eliminar(u.id)">Eliminar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        
+        <div class="col-12 py-4">
+            <h2 clas="display-5">Editar Datos de Estudiantes</h2>
+        </div>
+      
+        <form class="col-12" (ngSubmit)="enviarPos()">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" [(ngModel)]="usuario.nombre" class="form-control" name="nombre" placeholder="nombre">
+              </div>
+              <div class="mb-3">
+                <label for="direccion" class="form-label">Direccion</label>
+                <input type="text" [(ngModel)]="usuario.direccion" class="form-control" name="direccion" placeholder="direccion">
+              </div>
+              <button class="btn btn-primary">Guardar</button>
+        </form>
+        <div class="col-12 py-2">
+          <h4 clas="display-3">Lista de Estudiantes</h4>
+      </div>
+        <div class="col-12 py-1">
+        <ul class="list-group" *ngFor="let u of usuarios">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <p class="card-text"><b>Nombre: </b> {{ u.nombre }} - <b>Direccion: </b> {{ u.direccion }}</p>
+              <span><a  [routerLink]="['/registro']" class="btn btn-primary" (click)="editar(u.id)">Editar</a></span>
+            </li>
+          </ul>
+        </div>
+    </div>
+</div> 
+
